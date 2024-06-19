@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同人圖專區</title>
+    <link rel="icon" href="img/icon.png" type="image/png" sizes="60x60">
+    <style>
+        body mark {
+            background-color: #c09de3 !important;
+            color: white !important;
+            border-radius: 5px;
+        }
+
+        .navbar-custom {
+            background-color: #A78DC1;
+            position: fixed!important;
+            /* 将导航栏固定在页面上 */
+            top: 0;
+            /* 位于页面顶部 */
+            left: 0;
+            /* 位于页面左侧 */
+            width: 100%;
+            /* 占据整个页面宽度 */
+            z-index: 1000;
+            /* 确保导航栏在其他元素之上 */
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .img1 {
+            height: 100px;
+        }
+
+        .img2 {
+            height: 30px;
+            position: absolute;
+            right: 50px;
+            margin-top: 30px;
+        }
+
+        .img3 {
+            height: 36px;
+            position: absolute;
+            right: 100px;
+            margin-top: 30px;
+        }
+
+        .bottom-border {
+            border-bottom: 80px solid #A78DC1;
+        }
+
+        .text2 {
+            position: absolute;
+            left: 45px;
+            margin-top: 15px;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .img-container img {
+            padding: 3px;
+            background: linear-gradient(180deg, #e1c5fe, #7f6698);
+            z-index: 0;
+            border-radius: 15px;
+        }
+
+        .comment-box {
+            max-width: 1080px;
+
+            margin: 1px auto;
+            justify-content: center;
+            display: flex;
+        }
+
+        .comment-list {
+            width: 500px;
+            margin: auto;
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #eddaff;
+            border-radius: 15px;
+        }
+
+        .comment-list2 {
+            width: 500px;
+            margin: auto;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #eddaff;
+            border-radius: 15px;
+        }
+
+        .comment {
+            background: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #cbafe8;
+        }
+
+        .custom-btn {
+            background-color: #cbafe8 !important;
+            color: rgb(255, 255, 255) !important;
+            border-radius: 5px;
+            box-shadow: none !important;
+        }
+
+
+
+        /* 侧边栏样式 */
+        .sidebar {
+            position: fixed;
+            top: 20px;
+            right: 0;
+            width: 100px;
+            padding: 10px;
+            background: #f6dfff48;
+            height: 100%;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 18px;
+            color: #c09de3;
+            font-weight: bold;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background: #c09de3af;
+            color: #fff;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/夢得拾玖系會識別手冊白色.png" alt="夢得拾玖的圖片" width="130px" height="auto">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            活動介紹
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="上學期活動.html">上學期活動</a></li>
+                            <li><a class="dropdown-item" href="下學期活動.html">下學期活動</a></li>
+                            <li><a class="dropdown-item" href="特色小活動.html">特色小活動</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            系會組成
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="視覺手冊.html">視覺手冊</a></li>
+                            <li><a class="dropdown-item" href="各部門成員.html">各部門成員</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            其他
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="美宣品.html">美宣品</a></li>
+                            <li><a class="dropdown-item" href="側拍.html">側拍</a></li>
+                            <li><a class="dropdown-item" href="Q&A.html">Q&A</a></li>
+                            <li><a class="dropdown-item" href="同人圖.html">同人專區</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2>快速跳轉</h2>
+        <ul>
+            <li><a href="#image1">烏賊乾</a></li>
+            <li><a href="#image2">Gold Fish</a></li>
+            <li><a href="#image3">百宵</a></li>
+            <li><a href="#image4">秞糯秞</a></li>
+            <li><a href="#image5">Ek Evans</a></li>
+            <li><a href="#image6">洪子恩</a></li>
+            <li><a href="#image7">繪茶</a></li>
+        </ul>
+    </div>
+
+
+    <div class="d-flex justify-content-center " style="margin-top: 59px;">
+        <div class="carousel-inner">
+            <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/同人圖/01.jpg" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/同人圖/02.jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/同人圖/03.jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="mt-5" style="line-height: 1;" >
+        <div class="text-center" style="font-size: 45px;font-weight: bold;color: #c09de3;">
+            <p><mark>同人圖專區!!!</mark></p>
+        </div>
+        <div class="text-center mt-4" style="font-size: 30px;font-weight: bold;color: #c09de3;">
+            <p>快來看大家好美麗的作品</p>
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div>
+        <div class="d-flex container2 mt-4" style="gap: 50px;"id="image1">
+            <div>
+                <div class="img-container img" style="width: 330px; border-radius: 15px;">
+                    <div class="carousel-inner">
+                        <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/同人圖/烏賊_愚人節1.jpg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節2.jpg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節3.jpg" class="d-block w-100" alt="Image 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節4.jpg" class="d-block w-100" alt="Image 4">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節5.jpg" class="d-block w-100" alt="Image 5">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節6.jpg" class="d-block w-100" alt="Image 6">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節7.jpg" class="d-block w-100" alt="Image 7">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節8.jpg" class="d-block w-100" alt="Image 8">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/同人圖/烏賊_愚人節9.jpg" class="d-block w-100" alt="Image 9">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="img-container img" style="width: 600px; border-radius: 15px;">
+                    <img src="img/同人圖/394608219_1525752081528685_4211252369418686123_n.jpg" class="d-block w-100"
+                        alt="Image 2">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-2" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>活動綜合愚人節小故事｜大家都愛依芙琳🥰</mark></p>
+
+            <p>作者: <a href="https://www.facebook.com/verybigpudding" style="text-decoration: none;">烏賊乾 </a> </p>
+        </div>
+
+        <div class="comment-box text-center mt-3">
+            <div>
+                <div class="form-floating" style="margin-left: 50px;">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 50px; width: 450px;"></textarea>
+                    <label for="floatingTextarea2" style="font-size: 15px;">輸入...</label>
+                </div>
+                <div>
+                    <button id="submitComment2" class="btn mt-2 custom-btn">留言</button>
+                </div>
+            </div>
+            <div class="comment-list" id="commentList2" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                <!-- 留言将显示在这里 -->
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+
+    <div class="mt-5 d-flex flex-column align-items-center"id="image2">
+        <div class="img-container img d-flex justify-content-center" style=" border-radius: 15px;">
+            <img src="img/同人圖/376628416_341505141642138_7700078512637257913_n.jpg" class="img-fluid "
+                style="width: 500px;" alt="Image 2">
+        </div>
+        <div class="text-center mt-3"
+            style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1; width: 100%;">
+            <p><mark>公主和騎士</mark></p>
+            <p>作者: <a href="https://www.facebook.com/profile.php?id=100073479641918" style="text-decoration: none;">Gold
+                    Fish </a> </p>
+
+            <div class="comment-box text-center mt-3">
+                <div>
+                    <div class="form-floating" style="margin-left: auto; margin-right: auto; width: 450px;">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea3"
+                            style="height: 50px;"></textarea>
+                        <label for="floatingTextarea3" style="font-size: 15px;">輸入...</label>
+                    </div>
+                    <div>
+                        <button id="submitComment3" class="btn mt-3 custom-btn">留言</button>
+                    </div>
+                </div>
+
+                <div class="comment-list" id="commentList3" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                    <!-- 留言将显示在这里 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div class="d-flex container2 mt-5" style="gap: 120px;"id="image3">
+        <div class="img-container img" style="width: 300px; border-radius: 15px;">
+            <img src="img/同人圖/陳百宵.jpeg" class="d-block w-100" alt="Image 2">
+        </div>
+
+        <div class="text-center" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>賓的賓</mark></p>
+
+            <p>作者: <a href="https://www.facebook.com/profile.php?id=100007683511452" style="text-decoration: none;">百宵
+                </a></p>
+
+            <div class="comment-box" style="width: 500px;">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea4"
+                        style="height: 50px;"></textarea>
+                    <label for="floatingTextarea4" style="font-size: 15px;">輸入</label>
+                </div>
+            </div>
+            <div>
+                <button id="submitComment4" class="btn mt-2 custom-btn">留言</button>
+            </div>
+
+
+            <div class="comment-list2" id="commentList4" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                <!-- 留言将显示在这里 -->
+            </div>
+        </div>
+
+
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div>
+        <div class="d-flex container2 mt-4" style="gap: 50px;"id="image4">
+            <div>
+                <div>
+                    <div class="img-container img" style="width: 300px; border-radius: 15px;">
+                        <img src="img/同人圖/安瓦爾.jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="img-container img" style="width: 340px; border-radius: 15px;">
+                    <img src="img/同人圖/我只有畫到一半的魅力沒卡….jpeg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+            <div>
+                <div class="img-container img" style="width: 315px; border-radius: 15px;">
+                    <img src="img/同人圖/衣服馬.jpg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-2" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>安瓦爾天使｜太美麗親子圖｜依芙琳小馬!</mark></p>
+        </div>
+        <div class="d-flex container2 mt-4" style="gap: 20px;">
+            <div class="img-container img" style="width: 200px; border-radius: 15px;">
+                <div class="carousel-inner">
+                    <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/同人圖/2/油油 (1).jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/同人圖/2/油油 (10).jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-container img" style="width: 200px; border-radius: 15px;">
+                <div class="carousel-inner">
+                    <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/同人圖/2/油油 (5).jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/同人圖/2/油油 (7).jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-container img" style="width: 200px; border-radius: 15px;">
+                <div class="carousel-inner">
+                    <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/同人圖/2/油油 (2).jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/同人圖/2/油油 (8).jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-container img" style="width: 200px; border-radius: 15px;">
+                <div class="carousel-inner">
+                    <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/同人圖/2/油油 (3).jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/同人圖/2/油油 (6).jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-container img" style="width: 200px; border-radius: 15px;">
+                <div class="carousel-inner">
+                    <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/同人圖/2/油油 (4).jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/同人圖/2/油油 (9).jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-2" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>夢得拾玖幹部全員</mark></p>
+
+            <p>作者: <a href="https://www.facebook.com/profile.php?id=100029353446137" style="text-decoration: none;">秞糯秞
+                </a> </p>
+        </div>
+
+        <div class="comment-box text-center mt-3">
+            <div>
+                <div class="form-floating" style="margin-left: 50px;">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea5"
+                        style="height: 50px; width: 450px;"></textarea>
+                    <label for="floatingTextarea5" style="font-size: 15px;">輸入...</label>
+                </div>
+                <div>
+                    <button id="submitComment5" class="btn mt-2 custom-btn">留言</button>
+                </div>
+            </div>
+            <div class="comment-list" id="commentList5" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                <!-- 留言将显示在这里 -->
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div>
+        <div class="d-flex container2 mt-4" style="gap: 50px;"id="image5">
+            <div>
+                <div>
+                    <div class="img-container img" style="width: 350px; border-radius: 15px;">
+                        <img src="img/同人圖/418466503_919303829584615_8448585123745083003_n.jpg" class="d-block w-100"
+                            alt="Image 2">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="img-container img" style="width: 430px; border-radius: 15px;">
+                    <img src="img/同人圖/423194260_929498761898455_4913807906021618951_n.jpg" class="d-block w-100"
+                        alt="Image 2">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-2" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>兄妹新衣裝｜太帥了團長</mark></p>
+
+            <p>作者: <a href="https://www.facebook.com/evan.evans.7545708" style="text-decoration: none;">Ek Evans
+                </a> </p>
+        </div>
+
+        <div class="comment-box text-center mt-3">
+            <div>
+                <div class="form-floating" style="margin-left: 50px;">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea6"
+                        style="height: 60px; width: 450px;"></textarea>
+                    <label for="floatingTextarea6" style="font-size: 15px;">輸入...</label>
+                </div>
+                <div>
+                    <button id="submitComment6" class="btn mt-2 custom-btn">留言</button>
+                </div>
+            </div>
+            <div class="comment-list" id="commentList6" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                <!-- 留言将显示在这里 -->
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div>
+        <div class="d-flex container2 mt-4" style="gap: 20px;" id="image6">
+            <div>
+                <div>
+                    <div class="img-container img" style="width: 280px; border-radius: 15px;">
+                        <img src="img/同人圖/咪咪貓貓 (4).jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="img-container img" style="width: 280px; border-radius: 15px;">
+                    <img src="img/同人圖/咪咪貓貓 (3).jpg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+
+            <div>
+                <div class="img-container img" style="width: 280px; border-radius: 15px;">
+                    <img src="img/同人圖/咪咪貓貓 (1).jpg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+
+            <div>
+                <div class="img-container img" style="width: 392px; border-radius: 15px;">
+                    <img src="img/同人圖/咪咪貓貓 (2).jpg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-2" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>歡裝小記錄｜兄妹太極拳&動畫賓｜全部羊羊化｜非官方母女設定</mark></p>
+
+            <p>作者: <a href="https://www.facebook.com/profile.php?id=100011714346009" style="text-decoration: none;">洪子恩
+                </a> </p>
+        </div>
+
+        <div class="comment-box text-center mt-3">
+            <div>
+                <div class="form-floating" style="margin-left: 50px;">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea7"
+                        style="height: 70px; width: 450px;"></textarea>
+                    <label for="floatingTextarea7" style="font-size: 15px;">輸入...</label>
+                </div>
+                <div>
+                    <button id="submitComment7" class="btn mt-2 custom-btn">留言</button>
+                </div>
+            </div>
+            <div class="comment-list" id="commentList7" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                <!-- 留言将显示在这里 -->
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div>
+        <div class="d-flex container2 mt-4" style="gap: 20px;" id="image7">
+            <div>
+                <div>
+                    <div class="img-container img" style="width: 500px; border-radius: 15px;">
+                        <img src="img/同人圖/會查 (1).jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="img-container img" style="width: 500px; border-radius: 15px;">
+                    <img src="img/同人圖/會查 (2).jpg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex container2" style="gap: 20px;">
+            <div>
+                <div>
+                    <div class="img-container img" style="width: 500px; border-radius: 15px;">
+                        <img src="img/同人圖/會查 (3).jpg" class="d-block w-100" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="img-container img" style="width: 500px; border-radius: 15px;">
+                    <img src="img/同人圖/會查 (4).jpg" class="d-block w-100" alt="Image 2">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-2" style="font-size: 18px; color: #c09de3; font-weight: bold; line-height: 1;">
+            <p><mark>跨屆活動大集合繪茶</mark></p>
+
+            <p>作者:好多數媒人
+        </div>
+
+        <div class="comment-box text-center mt-3">
+            <div>
+                <div class="form-floating" style="margin-left: 50px;">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea8"
+                        style="height: 80px; width: 450px;"></textarea>
+                    <label for="floatingTextarea8" style="font-size: 15px;">輸入...</label>
+                </div>
+                <div>
+                    <button id="submitComment8" class="btn mt-2 custom-btn">留言</button>
+                </div>
+            </div>
+            <div class="comment-list" id="commentList8" style="font-size: 15px; color: #9f81bd; font-weight: bold;">
+                <!-- 留言将显示在这里 -->
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 1px; background: #c09de3; width: 80%; margin: 20px auto;"></div>
+
+    <div class="mt-5" style="line-height: 1;">
+        <div class="text-center" style="font-size: 25px;font-weight: bold;color: #c09de3;">
+            <p><mark>持續募集中 有更多同人圖歡迎分享給我們!</mark></p>
+        </div>
+    </div>
+
+    <div class="bottom-border mt-5">
+        <a href="https://www.facebook.com/SAofDMD">
+            <img src="img/fb_icon_325x325.png" class="img2" alt="FB">
+        </a>
+
+        <a href="https://instagram.com/yuntech.dmd.sa?igshid=MzMyNGUyNmU2YQ==">
+            <img src="img/Instagram-Logo.wine.png" class="img3" alt="IG">
+        </a>
+
+        <p class="text2" style="color: white; font-weight: bold; line-height: 30px; font-size: 17px;">
+            Email :
+            dmd19th@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地點：數媒系會辦(設計一館大門進入後左轉)<br>
+            營業時間 : 大二一年
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // 读取保存在本地存储中的留言
+            loadComments1();
+            loadComments2();
+            loadComments3();
+            loadComments4();
+            loadComments5();
+            loadComments6();
+            loadComments7();
+            loadComments8();
+
+
+
+            $('#submitComment2').click(function () {
+                var commentText = $('#floatingTextarea2').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList2').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment2(commentText);
+
+                    $('#floatingTextarea2').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+            $('#submitComment3').click(function () {
+                var commentText = $('#floatingTextarea3').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList3').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment3(commentText);
+
+                    $('#floatingTextarea3').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+            $('#submitComment4').click(function () {
+                var commentText = $('#floatingTextarea4').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList4').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment4(commentText);
+
+                    $('#floatingTextarea4').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+            $('#submitComment5').click(function () {
+                var commentText = $('#floatingTextarea5').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList5').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment5(commentText);
+
+                    $('#floatingTextarea5').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+            $('#submitComment6').click(function () {
+                var commentText = $('#floatingTextarea6').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList6').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment6(commentText);
+
+                    $('#floatingTextarea6').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+            $('#submitComment7').click(function () {
+                var commentText = $('#floatingTextarea7').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList7').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment7(commentText);
+
+                    $('#floatingTextarea7').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+            $('#submitComment8').click(function () {
+                var commentText = $('#floatingTextarea8').val().trim();
+
+                if (commentText !== "") {
+                    var commentHtml = '<div class="comment">' + commentText + '</div>';
+                    $('#commentList8').append(commentHtml);
+
+                    // 保存留言到本地存储
+                    saveComment8(commentText);
+
+                    $('#floatingTextarea8').val(""); // 清空输入框
+                } else {
+                    alert('請輸入留言內容');
+                }
+            });
+
+
+            function saveComment1(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments1')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments1', JSON.stringify(comments));
+            }
+
+            function loadComments1() {
+                var comments = JSON.parse(localStorage.getItem('comments1')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList1').append(commentHtml);
+                });
+            }
+
+
+            function saveComment2(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments2')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments2', JSON.stringify(comments));
+            }
+
+            function loadComments2() {
+                var comments = JSON.parse(localStorage.getItem('comments2')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList2').append(commentHtml);
+                });
+            }
+
+
+            function saveComment3(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments3')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments3', JSON.stringify(comments));
+            }
+
+            function loadComments3() {
+                var comments = JSON.parse(localStorage.getItem('comments3')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList3').append(commentHtml);
+                });
+            }
+
+            function saveComment4(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments4')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments4', JSON.stringify(comments));
+            }
+
+            function loadComments4() {
+                var comments = JSON.parse(localStorage.getItem('comments4')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList4').append(commentHtml);
+                });
+            }
+
+            function saveComment5(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments5')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments5', JSON.stringify(comments));
+            }
+
+            function loadComments5() {
+                var comments = JSON.parse(localStorage.getItem('comments5')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList5').append(commentHtml);
+                });
+            }
+
+            function saveComment6(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments6')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments6', JSON.stringify(comments));
+            }
+
+            function loadComments6() {
+                var comments = JSON.parse(localStorage.getItem('comments6')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList6').append(commentHtml);
+                });
+            }
+
+            function saveComment7(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments7')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments7', JSON.stringify(comments));
+            }
+
+            function loadComments7() {
+                var comments = JSON.parse(localStorage.getItem('comments7')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList7').append(commentHtml);
+                });
+            }
+
+            function saveComment8(comment) {
+                // 读取现有的评论数组
+                var comments = JSON.parse(localStorage.getItem('comments8')) || [];
+                comments.push(comment);
+                // 保存新的评论数组
+                localStorage.setItem('comments8', JSON.stringify(comments));
+            }
+
+            function loadComments8() {
+                var comments = JSON.parse(localStorage.getItem('comments8')) || [];
+                comments.forEach(function (comment) {
+                    var commentHtml = '<div class="comment">' + comment + '</div>';
+                    $('#commentList8').append(commentHtml);
+                });
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各部門成員</title>
+    <link rel="icon" href="img/icon.png" type="image/png" sizes="60x60">
+    <style>
+        .navbar-custom {
+            background-color: #A78DC1;
+            position: fixed !important;
+            /* 将导航栏固定在页面上 */
+            top: 0;
+            /* 位于页面顶部 */
+            left: 0;
+            /* 位于页面左侧 */
+            width: 100%;
+            /* 占据整个页面宽度 */
+            z-index: 1000;
+            /* 确保导航栏在其他元素之上 */
+        }
+
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .img1 {
+            height: 100px;
+        }
+
+        .img2 {
+            height: 30px;
+            position: absolute;
+            /* 设置绝对定位 */
+            right: 50px;
+            /* 将文字靠左显示 */
+            margin-top: 30px;
+            /* 调整文字位置 */
+        }
+
+        .img3 {
+            height: 36px;
+            position: absolute;
+            /* 设置绝对定位 */
+            right: 100px;
+            /* 将文字靠左显示 */
+            margin-top: 30px;
+            /* 调整文字位置 */
+        }
+
+        mark {
+            background-color: #c09de3;
+            color: white;
+            border-radius: 5px;
+            /* 设置圆角 */
+        }
+
+        .bottom-border {
+            border-bottom: 80px solid #A78DC1;
+            /* 添加底部边框，颜色为 #8e6ead */
+        }
+
+        .text2 {
+            position: absolute;
+            /* 设置绝对定位 */
+            left: 45px;
+            /* 将文字靠左显示 */
+            margin-top: 15px;
+            /* 调整文字位置 */
+        }
+
+        .circle-icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+
+        .circle-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .circle-icon1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            border: 4px solid rgb(23, 190, 23);
+            /* 添加绿色边框 */
+            padding: 5px;
+            /* 边框宽度 */
+        }
+
+        .circle-icon2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(45deg, rgb(236, 190, 24), rgb(243, 8, 129));
+            padding: 1px;
+            /* 边框宽度 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            position: relative;
+        }
+
+        .circle-icon2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f0f0f0;
+            /* 内层白色背景 */
+            border-radius: 50%;
+            margin: 4px;
+            /* 和padding值相同，确保边框宽度一致 */
+            z-index: 1;
+        }
+
+        .circle-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .circle-icon2 img {
+            position: relative;
+            width: calc(100% - 16px);
+            /* 减去padding */
+            height: calc(100% - 16px);
+            /* 减去padding */
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .icon-text {
+            font-weight: bold;
+            /* 设置字体粗细 */
+            color: #aa83d1;
+            /* 设置字体颜色 */
+            margin-top: 5px;
+        }
+
+        .icon-text a {
+            text-decoration: none;
+            color: inherit;
+            /* 保持文本颜色与周围文本一致 */
+        }
+
+        .icon-text a:hover {
+            color: rgb(88, 207, 225);
+            /* 添加悬停效果，颜色可根据需要调整 */
+        }
+
+        .icon-row-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            width: 1200px;
+            /* 8个图标的总宽度 */
+            height: 200px;
+            /* 8个图标的总宽度 */
+            margin: 0 auto;
+        }
+
+        .icon-row {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .nav-button-left {
+            left: 0;
+        }
+
+        .nav-button-right {
+            right: 0;
+        }
+
+
+
+
+
+        .rounded-circle {
+            width: 150px;
+            /* 根据需要调整图片大小 */
+            height: 150px;
+            /* 根据需要调整图片大小 */
+            overflow: hidden;
+            /* 确保圆形效果 */
+
+        }
+
+        .image-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-container h3 {
+            margin-top: px;
+        }
+
+        .scrolling-container {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .image-container1 {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            /* 使容器占满整个视口高度 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container1 img {
+            position: relative;
+            opacity: 0;
+            transform: translateY(80px);
+            animation: fadeInFromBottom 2s forwards;
+            /* 2秒渐入动画 */
+        }
+
+        @keyframes fadeInFromBottom {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-thumbnail1 {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .image-thumbnail1:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <style>
+        /* Overlay styles 王依彤 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 關巧琳 */
+        .overlay1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content1 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content1 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn1 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 賴建宏 */
+        .overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content2 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content2 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn2 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 郭晉彤 */
+        .overlay3 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content3 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content3 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn3 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 洪子恩 */
+        .overlay4 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content4 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content4 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn4 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 陳百宵 */
+        .overlay5 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content5 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content5 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn5 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 謝Yufan */
+        .overlay6 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content6 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content6 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn6 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 秞糯秞 */
+        .overlay7 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content7 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content7 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn7 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 謝新爐 */
+        .overlay8 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content8 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content8 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn8 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        /* Overlay styles 周EK */
+        .overlay9 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay-content9 {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay-content9 img {
+            width: auto;
+            height: 80vh;
+            object-fit: contain;
+        }
+
+        .close-btn9 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .image-line-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .image-line {
+            width: 20px;
+            height: 5px;
+            margin: 0 5px;
+            background-color: white;
+        }
+
+        .image-line.active {
+            background-color: purple;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/夢得拾玖系會識別手冊白色.png" alt="夢得拾玖的圖片" width="130px" height="auto">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            活動介紹
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="上學期活動.html">上學期活動</a></li>
+                            <li><a class="dropdown-item" href="下學期活動.html">下學期活動</a></li>
+                            <li><a class="dropdown-item" href="特色小活動.html">特色小活動</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            系會組成
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="視覺手冊.html">視覺手冊</a></li>
+                            <li><a class="dropdown-item" href="各部門成員.html">各部門成員</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            其他
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="美宣品.html">美宣品</a></li>
+                            <li><a class="dropdown-item" href="側拍.html">側拍</a></li>
+                            <li><a class="dropdown-item" href="Q&A.html">Q&A</a></li>
+                            <li><a class="dropdown-item" href="同人圖.html">同人專區</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5 d-flex justify-content-center" style="margin-top: 80px;">
+        <!-- 圆形图标 -->
+        <div class="container mt-0 pt-3 d-flex" style="margin-top: 80px;">
+            <div class="icon-row-container">
+                <button class="nav-button nav-button-left">&lt;</button>
+                <div class="icon-row">
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon">
+                            <img src="https://via.placeholder.com/80" alt="Icon 1">
+                        </a>
+                        <span>Text 1</span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon">
+                            <img src="https://via.placeholder.com/80" alt="Icon 2">
+                        </a>
+                        <span>Text 2</span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon">
+                            <img src="https://via.placeholder.com/80" alt="Icon 3">
+                        </a>
+                        <span>Text 3</span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon1 image-thumbnail1" id="icon4">
+                            <img src="img/各部門成員/王依彤.jpg" alt="Icon 4">
+                        </a>
+                        <span class="icon-text"><a href="依彤.html">王依彤</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon2 image-thumbnail1" id="icon5">
+                            <img src="img/各部門成員/關巧琳.png" alt="Icon 5">
+                        </a>
+                        <span class="icon-text"><a href="巧琳.html">關巧琳</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon2 image-thumbnail1 " id="icon6">
+                            <img src="img/各部門成員/賴建宏.png" alt="Icon 6">
+                        </a>
+                        <span class="icon-text"><a href="建宏.html">賴建宏</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon1 img-fluid image-thumbnail1" id="icon7">
+                            <img src="img/各部門成員/郭晉彤.jpg" alt="Icon 7">
+                        </a>
+                        <span class="icon-text"><a href="晉彤.html">郭晉彤</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon1 img-fluid image-thumbnail1" id="icon8">
+                            <img src="img/各部門成員/洪子恩.jpg" alt="Icon 8">
+                        </a>
+                        <span class="icon-text"><a href="子恩.html">洪子恩</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon2 image-thumbnail1" id="icon9">
+                            <img src="img/各部門成員/陳百宵.png" alt="Icon 9">
+                        </a>
+                        <span class="icon-text"><a href="百宵.html">陳百宵</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon2 image-thumbnail1" id="icon10">
+                            <img src="img/各部門成員/謝Yufan.png" alt="Icon 10">
+                        </a>
+                        <span class="icon-text"><a href="Yufan.html">謝Yufan</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon2 image-thumbnail1" id="icon11">
+                            <img src="img/各部門成員/秞糯秞.png" alt="Icon 11">
+                        </a>
+                        <span class="icon-text"><a href="秞秞.html">秞糯秞</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon1 img-fluid image-thumbnail1" id="icon12">
+                            <img src="img/各部門成員/謝新爐.jpg" alt="Icon 12">
+                        </a>
+                        <span class="icon-text"><a href="新爐.html">謝新爐</a></span>
+                    </div>
+                    <div class="circle-icon-container">
+                        <a href="#" class="circle-icon circle-icon2 image-thumbnail1" id="icon13">
+                            <img src="img/各部門成員/周ek.png" alt="Icon 13">
+                        </a>
+                        <span class="icon-text"><a href="EK.html">周EK</a></span>
+                    </div>
+
+                </div>
+                <button class="nav-button nav-button-right">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="image-container1">
+                    <!-- 在这里放置图片 -->
+                    <img src="img/各部門成員/可愛的人們+字.png" class="img-fluid" alt="Placeholder Image">
+                    <!-- 使用占位符图片代替，替换为你的实际图片路径 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="imageOverlay" class="overlay">
+        <div class="overlay-content">
+            <button class="close-btn" id="closeOverlay">&times;</button>
+            <button id="prevImageBtn" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer">
+                <!-- 插入圖片 -->
+                <img id="img/王依彤/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn" class="nav-button nav-button-right">&gt;</button>
+        </div>
+    </div>
+    <div id="imageOverlay1" class="overlay1">
+        <div class="overlay-content1">
+            <button class="close-btn1" id="closeOverlay1">&times;</button>
+            <button id="prevImageBtn1" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer1">
+                <!-- 插入圖片 -->
+                <img id="img/關巧琳/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn1" class="nav-button nav-button-right">&gt;</button>
+        </div>
+    </div>
+    <div id="imageOverlay2" class="overlay2">
+        <div class="overlay-content1">
+            <button class="close-btn2" id="closeOverlay2">&times;</button>
+            <button id="prevImageBtn2" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer2">
+                <!-- 插入圖片 -->
+                <img id="img/賴建宏/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn2" class="nav-button nav-button-right">&gt;</button>
+        </div>
+    </div>
+    <div id="imageOverlay3" class="overlay3">
+        <div class="overlay-content3">
+            <button class="close-btn3" id="closeOverlay3">&times;</button>
+            <button id="prevImageBtn3" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer3">
+                <!-- 插入圖片 -->
+                <img id="img/郭晉彤/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn3" class="nav-button nav-button-right">&gt;</button>
+        </div>
+    </div>
+    <div id="imageOverlay4" class="overlay4">
+        <div class="overlay-content4">
+            <button class="close-btn4" id="closeOverlay4">&times;</button>
+            <button id="prevImageBtn4" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer4">
+                <!-- 插入圖片 -->
+                <img id="img/洪子恩/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn4" class="nav-button nav-button-right">&gt;</button>
+        </div>
+    </div>
+    <div id="imageOverlay5" class="overlay5">
+        <div class="overlay-content5">
+            <button class="close-btn5" id="closeOverlay5">&times;</button>
+            <button id="prevImageBtn5" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer5">
+                <!-- 插入圖片 -->
+                <img id="img/陳百宵/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn5" class="nav-button nav-button-right">&gt;</button>
+        </div>
+
+    </div>
+    <div id="imageOverlay6" class="overlay6">
+        <div class="overlay-content6">
+            <button class="close-btn6" id="closeOverlay6">&times;</button>
+            <button id="prevImageBtn6" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer6">
+                <!-- 插入圖片 -->
+                <img id="img/謝Yufan/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn6" class="nav-button nav-button-right">&gt;</button>
+        </div>
+
+    </div>
+    <div id="imageOverlay7" class="overlay7">
+        <div class="overlay-content7">
+            <button class="close-btn7" id="closeOverlay7">&times;</button>
+            <button id="prevImageBtn7" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer7">
+                <!-- 插入圖片 -->
+                <img id="img/秞糯秞/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn7" class="nav-button nav-button-right">&gt;</button>
+        </div>
+
+    </div>
+    <div id="imageOverlay8" class="overlay8">
+        <div class="overlay-content8">
+            <button class="close-btn8" id="closeOverlay8">&times;</button>
+            <button id="prevImageBtn8" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer8">
+                <!-- 插入圖片 -->
+                <img id="img/謝新爐/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn8" class="nav-button nav-button-right">&gt;</button>
+        </div>
+
+    </div>
+    <div id="imageOverlay9" class="overlay9">
+        <div class="overlay-content9">
+            <button class="close-btn9" id="closeOverlay9">&times;</button>
+            <button id="prevImageBtn9" class="nav-button nav-button-left">&lt;</button>
+            <div id="overlayImageContainer9">
+                <!-- 插入圖片 -->
+                <img id="img/周EK/01.jpg" class="img-fluid" alt="Large Image">
+            </div>
+            <button id="nextImageBtn9" class="nav-button nav-button-right">&gt;</button>
+        </div>
+
+    </div>
+
+
+    <div class="bottom-border mt-4">
+        <a href="https://www.facebook.com/SAofDMD">
+            <img src="img/fb_icon_325x325.png" class="img2" alt="FB">
+        </a>
+        <a href="https://instagram.com/yuntech.dmd.sa?igshid=MzMyNGUyNmU2YQ==">
+            <img src="img/Instagram-Logo.wine.png" class="img3" alt="IG">
+        </a>
+        <p class="text2 " style="color: white; font-weight: bold;line-height: 30px;font-size: 17px;">
+            Email :
+            dmd19th@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地點：數媒系會辦(設計一館大門進入後左轉)<br>
+            營業時間 : 大二一年
+        </p>
+    </div>
+    <div></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const iconRow = document.querySelector('.icon-row');
+            const leftButton = document.querySelector('.nav-button-left');
+            const rightButton = document.querySelector('.nav-button-right');
+            const iconWidth = 100; // 图标宽度 + 间距
+            let currentIndex = 0;
+
+            function updateButtons() {
+                leftButton.style.display = currentIndex === 0 ? 'none' : 'block';
+                rightButton.style.display = currentIndex >= iconRow.children.length - 8 ? 'none' : 'block';
+            }
+
+            leftButton.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    iconRow.style.transform = `translateX(-${currentIndex * iconWidth}px)`;
+                }
+                updateButtons();
+            });
+
+            rightButton.addEventListener('click', function () {
+                if (currentIndex < iconRow.children.length - 8) {
+                    currentIndex++;
+                    iconRow.style.transform = `translateX(-${currentIndex * iconWidth}px)`;
+                }
+                updateButtons();
+            });
+
+            updateButtons();
+            // 點擊顯示覆蓋層
+            const icon4 = document.getElementById('icon4');
+            const overlay = document.getElementById('imageOverlay');
+            const overlayImageContainer = document.getElementById('overlayImageContainer');
+            const closeOverlay = document.getElementById('closeOverlay');
+
+            icon4.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+            });
+
+            closeOverlay.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('.image-thumbnail').on('click', function () {
+                var src = $(this).attr('src');
+                $('#modalImage').attr('src', src.replace('150', '600'));
+            });
+        });
+
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon4 = document.getElementById('icon4');
+            const overlay = document.getElementById('imageOverlay');
+            const closeOverlayBtn = document.getElementById('closeOverlay');
+            const overlayImageContainer = document.getElementById('overlayImageContainer');
+            const images = [
+                "img/王依彤/01.jpg",
+                "img/王依彤/02.jpg",
+                "img/王依彤/03.jpg",
+                "img/王依彤/04.jpg",
+                "img/王依彤/05.jpg"
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 4 點擊事件
+            icon4.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon4 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon5');
+            const overlay = document.getElementById('imageOverlay1');
+            const closeOverlayBtn = document.getElementById('closeOverlay1');
+            const overlayImageContainer = document.getElementById('overlayImageContainer1');
+            const images = [
+                'img/關巧琳/01.jpg',
+                'img/關巧琳/02.jpg',
+                'img/關巧琳/03.jpg',
+                'img/關巧琳/04.jpg',
+                'img/關巧琳/05.jpg'
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn1').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn1').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon6');
+            const overlay = document.getElementById('imageOverlay2');
+            const closeOverlayBtn = document.getElementById('closeOverlay2');
+            const overlayImageContainer = document.getElementById('overlayImageContainer2');
+            const images = [
+                'img/賴建宏/02.jpg',
+                'img/賴建宏/03.jpg',
+                'img/賴建宏/07.jpg',
+                'img/賴建宏/05.jpg',
+                'img/賴建宏/06.jpg'
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn2').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn2').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon7');
+            const overlay = document.getElementById('imageOverlay3');
+            const closeOverlayBtn = document.getElementById('closeOverlay3');
+            const overlayImageContainer = document.getElementById('overlayImageContainer3');
+            const images = [
+                'img/郭晉彤/01.jpg',
+                'img/郭晉彤/02.jpg',
+                'img/郭晉彤/03.jpg',
+                'img/郭晉彤/04.jpg',
+                'img/郭晉彤/05.jpg'
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn3').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn3').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon8');
+            const overlay = document.getElementById('imageOverlay4');
+            const closeOverlayBtn = document.getElementById('closeOverlay4');
+            const overlayImageContainer = document.getElementById('overlayImageContainer4');
+            const images = [
+                'img/洪子恩/05.jpg',
+                'img/洪子恩/01.jpg',
+                'img/洪子恩/02.jpg',
+                'img/洪子恩/03.jpg',
+                'img/洪子恩/04.jpg'
+
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn4').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn4').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon9');
+            const overlay = document.getElementById('imageOverlay5');
+            const closeOverlayBtn = document.getElementById('closeOverlay5');
+            const overlayImageContainer = document.getElementById('overlayImageContainer5');
+            const images = [
+                'img/陳百宵/01.jpg',
+                'img/陳百宵/02.jpg',
+                'img/陳百宵/03.jpg',
+                'img/陳百宵/04.jpg',
+                'img/陳百宵/05.jpg'
+
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn5').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn5').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon10');
+            const overlay = document.getElementById('imageOverlay6');
+            const closeOverlayBtn = document.getElementById('closeOverlay6');
+            const overlayImageContainer = document.getElementById('overlayImageContainer6');
+            const images = [
+                'img/謝Yufan/01.jpg',
+                'img/謝Yufan/02.jpg',
+                'img/謝Yufan/03.jpg',
+                'img/謝Yufan/04.jpg',
+                'img/謝Yufan/05.jpg'
+
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn6').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn6').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon11');
+            const overlay = document.getElementById('imageOverlay7');
+            const closeOverlayBtn = document.getElementById('closeOverlay7');
+            const overlayImageContainer = document.getElementById('overlayImageContainer7');
+            const images = [
+                'img/秞糯秞/01.jpg',
+                'img/秞糯秞/02.jpg',
+                'img/秞糯秞/03.jpg',
+                'img/秞糯秞/04.jpg',
+                'img/秞糯秞/05.jpg'
+
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn7').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn7').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon12');
+            const overlay = document.getElementById('imageOverlay8');
+            const closeOverlayBtn = document.getElementById('closeOverlay8');
+            const overlayImageContainer = document.getElementById('overlayImageContainer8');
+            const images = [
+                'img/謝新爐/01.jpg',
+                'img/謝新爐/02.jpg',
+                'img/謝新爐/03.jpg',
+                'img/謝新爐/04.jpg',
+                'img/謝新爐/05.jpg'
+
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn8').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn8').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icon5 = document.getElementById('icon13');
+            const overlay = document.getElementById('imageOverlay9');
+            const closeOverlayBtn = document.getElementById('closeOverlay9');
+            const overlayImageContainer = document.getElementById('overlayImageContainer9');
+            const images = [
+                'img/周EK/01.jpg',
+                'img/周EK/02.jpg',
+                'img/周EK/03.jpg',
+                'img/周EK/04.jpg',
+                'img/周EK/05.jpg'
+
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                const image = new Image();
+                image.onload = function () {
+                    overlayImageContainer.innerHTML = '';
+                    overlayImageContainer.appendChild(image);
+                    fadeIn(image);
+                };
+                image.src = images[currentImageIndex];
+            }
+
+            function fadeIn(element) {
+                element.style.opacity = 0;
+                let opacity = 0;
+                const fadeInInterval = setInterval(function () {
+                    opacity += 0.2;
+                    element.style.opacity = opacity;
+                    if (opacity >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 50);
+            }
+
+            // 監聽左右按鈕的點擊事件
+            document.getElementById('prevImageBtn9').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            document.getElementById('nextImageBtn9').addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // 監聽 Icon 5 點擊事件
+            icon5.addEventListener('click', function (event) {
+                event.preventDefault();
+                overlay.style.display = 'flex';
+                currentImageIndex = 0; // 修改這裡以便展示 icon5 對應的圖片
+                updateImage();
+            });
+
+            // 監聽關閉按鈕的點擊事件
+            closeOverlayBtn.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+
+            // 點擊覆蓋框外部區域來關閉覆蓋框
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

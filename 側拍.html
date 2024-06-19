@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>側拍</title>
+    <link rel="icon" href="img/icon.png" type="image/png" sizes="60x60">
+    <style>
+         body {
+            background-image: url('img/側拍背景.jpg'); /* 替换为你的背景图片路径 */
+            background-size: cover; /* 使背景图片覆盖整个容器 */
+            background-repeat: no-repeat; /* 防止背景图片重复 */
+            background-attachment: fixed; /* 使背景图片固定 */
+            background-position: center; /* 使背景图片居中 */
+        }
+
+        .navbar-custom {
+            background-color: #A78DC1;
+            position: fixed!important;
+            /* 将导航栏固定在页面上 */
+            top: 0;
+            /* 位于页面顶部 */
+            left: 0;
+            /* 位于页面左侧 */
+            width: 100%;
+            /* 占据整个页面宽度 */
+            z-index: 1000;
+            /* 确保导航栏在其他元素之上 */
+        }
+
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+    }
+
+    .nav-item {
+        position: relative;
+    }
+    .img1 {
+        height: 100px;
+    }
+
+    .img2 {
+        height: 30px;
+        position: absolute;
+        /* 设置绝对定位 */
+        right: 50px;
+        /* 将文字靠左显示 */
+        margin-top: 30px;
+        /* 调整文字位置 */
+    }
+
+    .img3 {
+        height: 36px;
+        position: absolute;
+        /* 设置绝对定位 */
+        right: 100px;
+        /* 将文字靠左显示 */
+        margin-top: 30px;
+        /* 调整文字位置 */
+    }
+
+    mark {
+        background-color: #c09de3;
+        color: white;
+        border-radius: 5px;
+        /* 设置圆角 */
+    }
+
+    .bottom-border {
+        border-bottom: 80px solid #A78DC1;
+        /* 添加底部边框，颜色为 #8e6ead */
+    }
+
+    .text2 {
+        position: absolute;
+        /* 设置绝对定位 */
+        left: 45px;
+        /* 将文字靠左显示 */
+        margin-top: 15px;
+        /* 调整文字位置 */
+    }
+    body.fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            /* 使链接文本颜色继承 */
+        }
+
+        .card-link:visited,
+        .card-link:link,
+        .card-link:hover,
+        .card-link:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/夢得拾玖系會識別手冊白色.png" alt="夢得拾玖的圖片" width="130px" height="auto">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            活動介紹
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="上學期活動.html">上學期活動</a></li>
+                            <li><a class="dropdown-item" href="下學期活動.html">下學期活動</a></li>
+                            <li><a class="dropdown-item" href="特色小活動.html">特色小活動</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            系會組成
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="視覺手冊.html">視覺手冊</a></li>
+                            <li><a class="dropdown-item" href="各部門成員.html">各部門成員</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white; font-weight: bold;">
+                            其他
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="美宣品.html">美宣品</a></li>
+                            <li><a class="dropdown-item" href="側拍.html">側拍</a></li>
+                            <li><a class="dropdown-item" href="Q&A.html">Q&A</a></li>
+                            <li><a class="dropdown-item" href="同人圖.html">同人專區</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 mx-2" data-bs-ride="carousel"style="margin-top: 80px;">
+        <div class="col">
+            <a href="活動照片.html" class="card-link" id="transitionLink1">
+                <div class="card h-100">
+                    <div id="cardCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/活動/09-1.jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/活動/01.jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/活動/12.jpg" class="d-block w-100" alt="Image 3">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #8e6ead; font-weight: bold;">【活動】照片</h5>
+                        <p class="card-text" style="color: #5b3581; font-weight: bold;">
+                            記憶依舊歷歷在目，好想再回到那段時光？別擔心，我們的活動過程都有被好好記錄下來！
+                        
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="表演照片.html" class="card-link" id="transitionLink2">
+                <div class="card h-100">
+                    <div id="cardCarousel2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/表演/03.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/表演/20.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/表演/22.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:  #8e6ead; font-weight: bold;">【表演】照片</h5>
+                        <p class="card-text" style="color:#5b3581; font-weight: bold;">
+                            看完精彩的表演，是否也想跟他們一樣成為舞台的中心呢？
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="遊戲照片.html" class="card-link" id="transitionLink3">
+                <div class="card h-100">
+                    <div id="cardCarousel3" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/遊戲/01.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/遊戲/07.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/遊戲/16.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #8e6ead; font-weight: bold;">【遊戲】照片</h5>
+                        <p class="card-text" style="color:#5b3581;font-weight: bold;">
+                            你還記得那個遊戲嗎？你說你不記得了！那就趕快點進來看看吧~
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="講座照片.html" class="card-link" id="transitionLink4">
+                <div class="card h-100">
+                    <div id="cardCarousel4" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/講座/13.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/講座/08.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/講座/02.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #8e6ead; font-weight: bold;">【講座】照片</h5>
+                        <p class="card-text" style="color: #5b3581; font-weight: bold;">
+                            來看看有著豐富業界經驗的講師，分享他們的設計專業、行業見解以及對未來的展望。</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="其他照片.html" class="card-link" id="transitionLink5">
+                <div class="card h-100">
+                    <div id="cardCarousel5" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="img/其他/16-1.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/其他/06.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="img/其他/09.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #8e6ead; font-weight: bold;">【其他】照片</h5>
+                        <p class="card-text" style="color: #5b3581; font-weight: bold;">
+                            想看看其他的照片嗎？也可以來這裡尋找喔...</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="bottom-border mt-4">  <!-- 這是底 -->
+        <a href="https://www.facebook.com/SAofDMD">
+            <img src="img/fb_icon_325x325.png" class="img2" alt="FB">
+        </a>
+    
+        <a href="https://instagram.com/yuntech.dmd.sa?igshid=MzMyNGUyNmU2YQ==">
+            <img src="img/Instagram-Logo.wine.png" class="img3" alt="IG">
+        </a>
+    
+        <p class="text2 " style="color: white; font-weight: bold;line-height: 30px;font-size: 17px;">
+            Email :
+            dmd19th@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地點：數媒系會辦(設計一館大門進入後左轉)<br>
+            營業時間 : 大二一年
+        </p>
+    </div>
+    <script>
+        document.getElementById("transitionLink1").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "活動照片.html";
+            }, 500);
+        });
+
+        document.getElementById("transitionLink2").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "表演照片.html";
+            }, 500);
+        });
+
+        document.getElementById("transitionLink3").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "遊戲照片.html";
+            }, 500);
+        });
+
+        document.getElementById("transitionLink4").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "講座照片.html";
+            }, 500);
+        });
+
+        document.getElementById("transitionLink5").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "其他照片.html";
+            }, 500);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
